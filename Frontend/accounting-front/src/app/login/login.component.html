@@ -1,0 +1,125 @@
+<!-- Header -->
+<nav class="navbar">
+  <div class="navbar_container">
+    <a href="/account" id="navbar_logo"><i class="fa-solid fa-coins"></i> Accounting</a>
+
+    <div class="navbar_menu">
+      <div class="buttons">
+        <div class="navbar_btn">
+          <a href="/signup" class="btn">Sign Up</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+
+<!-- Login Div -->
+<div class="login_main">
+  <div class="main-container">
+    <div class="main_img">
+      <img src="assets/Images/login.svg" alt="Main Image" id="main_img">
+    </div>
+
+    <div id="login_card">
+      <section id="login">
+        <div class="login_container">
+          <h2 id="login_header"><u>Log In</u></h2>
+      
+          <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+            <div class="col-lg-4 mt-2">
+              <input type="text" class="form-control" formControlName="Email" placeholder="Email">
+            </div>
+        
+            &nbsp;
+      
+            <div class="col-lg-4 mt-2">
+              <input type="password" class="form-control" formControlName="Password" placeholder="Password">
+            </div>
+        
+            &nbsp;
+      
+            <p id="loginLink">Forgot password? <a href="/account">Click here</a> </p>
+            <p id="loginLink">Don't have an account? <a href="/signup">Click here</a></p>
+
+            <div class="col-lg-4 mt-2">
+              <button mat-button id="login_btn">Log In</button>
+            </div>
+
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- Footer section -->
+<div class="footer_container">
+  <div class="footer_links">
+    <div class="footer_link_wrapper">
+      <div class="footer_link_items">
+        <h2>About Us</h2>
+        <a href="/">How it works</a>
+        <a href="/">Careers</a>
+        <a href="/">Investments</a>
+        <a href="/">Terms of Service</a>
+      </div>
+
+      <div class="footer_link_items">
+        <h2>Contact Us</h2>
+        <a href="/">Contact</a>
+        <a href="/">Support</a>
+        <a href="/">Destinations</a>
+        <a href="/">Sponsorships</a>
+      </div>
+    </div>
+
+    <div class="footer_link_wrapper">
+      <div class="footer_link_items">
+        <h2>Videos</h2>
+        <a href="/">Submit Video</a>
+        <a href="/">Ambassadors</a>
+        <a href="/">Agency</a>
+        <a href="/">Influencer</a>
+      </div>
+
+      <div class="footer_link_items">
+        <h2>Social Media</h2>
+          <a href="//www.facebook.com" target="_blank">Facebook</a>
+          <a href="//www.instagram.com" target="_blank">instagram</a>
+          <a href="//www.youtube.com" target="_blank">YouTube</a>
+          <a href="//twitter.com" target="_blank">Twitter</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="social_media">
+    <div class="social_media_wrap">
+      <div class="footer_logo">
+        <a href="/account" id="footer_logo">
+          <i class="fa-solid fa-coins"></i>  Accounting
+        </a>
+      </div>
+
+      <p class="website_rights">Ⓒ Kavindu Hasintha 2022. All rights reserved</p>
+
+      <div class="social_icons">
+        <a href="//www.facebook.com" class="social_icon_link" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="//www.instagram.com" class="social_icon_link" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="//www.youtube.com" class="social_icon_link" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="//twitter.com" class="social_icon_link" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+
+</div>

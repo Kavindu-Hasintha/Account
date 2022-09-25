@@ -1,0 +1,615 @@
+<!-- Header -->
+<nav class="navbar">
+    <div class="navbar_container">
+      <a href="/account" id="navbar_logo"><i class="fa-solid fa-coins"></i> Accounting</a>
+  
+      <div class="navbar_menu">
+        <div class="buttons">
+          <!--  
+          <div class="navbar_btn">
+            <a href="/login" class="btn">Log In</a>
+          </div>
+          <div class="navbar_btn">
+            <a href="/signup" class="btn">Sign Up</a>
+          </div>
+        -->
+        </div>
+  
+      </div>
+    </div>
+</nav>
+
+
+<div class="main-table">
+<table id="main_table">
+    <thead>
+        <tr>
+            <th id="heading"><h1>Statement of Profit or Loss and OCI</h1></th>
+            <th id="heading"><h1>Statement of Financial Position</h1></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <div class="container_one">
+
+                <form [formGroup]="oci2" (ngSubmit)="getValue2()">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="choose">Choose a Section</label>
+                        </div>
+                        <div class="col-75">
+                            <select id="choose" formControlName="CoChoose" name="Choose" form="oci2">
+                                <option value="select">--Select--</option>
+                                <option value="sales">Sales</option>
+                                <option value="costofsales">Cost Of Sales</option>
+                                <option value="otherincome">Other Income</option>
+                                <option value="administrativeexpenses">Administrative Expenses</option>
+                                <option value="salesexpenses">Sales & Distribution Expenses</option>
+                                <option value="financialexpenses">Financial & Other Expenses</option>
+                            </select>
+                        </div>
+                    </div> 
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="year">Year</label>
+                        </div>
+                        <div class="col-75">
+                            <input dir="rtl" type="text" id="year" formControlName="Year" placeholder="YYYY"> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="name" formControlName="CoName" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="value">Value</label>
+                        </div>
+                        <div class="col-75">
+                            <input dir="rtl" type="number" id="value" formControlName="CoValue" placeholder="0.00">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 mt-2">
+                            <button id="enter_btn" mat-raised-button color="primary">Enter</button>
+                        </div>
+                    </div>
+                </form>
+                
+                <form [formGroup]="ocinet" (ngSubmit)="getNetProfit()">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="year">Year</label>
+                        </div>
+                        <div class="col-75">
+                            <input dir="rtl" type="text" id="year" formControlName="Year" placeholder="YYYY"> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 mt-2">
+                            <button id="enter_btn_net" mat-raised-button color="warn">Net Profit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            </td>
+
+
+            <!-- SFP -->
+            <td>
+                <div class="container_one">
+                    <form [formGroup]="sfpa" (ngSubmit)="getValueSFPA()">
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="choose">Choose a Section</label>
+                            </div>
+                            <div class="col-75">
+                                <select id="choose" formControlName="sfpChoose" name="Choose" form="sfpa">
+                                    <option value="select">--Select--</option>
+                                    <option value="noncurrentassets">Non-Current Assets</option>
+                                    <option value="currentassets">Current Assets</option>
+                                    <option value="equity">Equity</option>
+                                    <option value="noncurrentliabilities">Non-Current Liabilities</option>
+                                    <option value="currentliabilities">Current Liabilities</option>
+                                </select>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="year">Year</label>
+                            </div>
+                            <div class="col-75">
+                                <input dir="rtl" type="text" id="year" formControlName="sYear" placeholder="YYYY"> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="name">Name</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="name" formControlName="sName" name="Name" placeholder="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="value">Value</label>
+                            </div>
+                            <div class="col-75">
+                                <input dir="rtl" type="number" id="value" formControlName="sValue" name="Value" placeholder="0.00">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 mt-2">
+                                <button id="enter_btn" mat-raised-button color="primary">Enter</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form [formGroup]="tael" (ngSubmit)="getTotalAEL()">
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="year">Year</label>
+                            </div>
+                            <div class="col-75">
+                                <input dir="rtl" type="text" id="year" formControlName="Year" placeholder="YYYY"> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 mt-2">
+                                <button id="enter_btn_net" mat-raised-button color="warn">Total (Assets, Equity and Liabilities)</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </td>
+        </tr>
+
+        
+        <tr>
+            <td>
+                <div class="pl-div">
+                <table id="oci_table">
+                    <caption id="caption">Statement of P&L and OCI</caption>
+                    <tbody>
+                        <tr *ngFor="let s of salesdata">
+                            <td scope="row">{{ s.namevalue }}</td>
+                            <td class="border_left_right" id="text_right">{{ s.valu }}</td>
+                            <td id="text_right"></td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <td></td>
+                        <td class="border_lrb" id="text_right"></td>
+                        <td class="border_b" id="text_right"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right">{{ sumSalesData }}</td>
+                    </tr>
+
+                    <tr>
+                        <td><h3><b><u>Cost Of Sales</u></b></h3></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right"></td>
+                    </tr>
+                    <tbody>
+                        <tr *ngFor="let s of costofsales">
+                            <td scope="row">{{ s.namevalue }}</td>
+                            <td class="border_left_right" id="text_right">{{ s.valu }}</td>
+                            <td id="text_right"></td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <td><b>Cost Of Sales</b></td>
+                        <td class="border_lrb" id="text_right"></td>
+                        <td class="border_b" id="text_right">( {{ sumCost }} )</td>
+                    </tr>
+                    <tr>
+                        <td><h3><b><u>Gross Profit</u></b></h3></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right">{{ sumSalesData - sumCost }}</td>
+                    </tr>
+<!--
+                    <tr>
+                        <td>Purchase</td>
+                        <td class="border_left_right" id="text_right">50,000</td>
+                        <td id="text_right"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="border_lrb" id="text_right"></td>
+                        <td class="border_b" id="text_right">(1,000)</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right">20,000</td>
+                    </tr>
+                -->                    
+                    <tr class="blank_row">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><h3><b><u>Other Income</u></b></h3></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right"></td>
+                    </tr>
+                    <tbody>
+                        <tr *ngFor="let s of otherincome">
+                            <td scope="row">{{ s.namevalue }}</td>
+                            <td class="border_left_right" id="text_right">{{ s.valu }}</td>
+                            <td id="text_right"></td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <td></td>
+                        <td class="border_lrb" id="text_right"></td>
+                        <td class="border_b" id="text_right"> {{ sumOther }}</td>
+                    </tr>
+                    <tr class="blank_row">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><h3><b><u>Administrative Expenses</u></b></h3></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right"></td>
+                    </tr>
+                    <tbody>
+                        <tr *ngFor="let s of administrative">
+                            <td scope="row">{{ s.namevalue }}</td>
+                            <td class="border_left_right" id="text_right">{{ s.valu }}</td>
+                            <td id="text_right"></td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <td></td>
+                        <td class="border_lrb" id="text_right"></td>
+                        <td class="border_b" id="text_right">( {{ sumAdministrative }} )</td>
+                    </tr>
+                    <tr class="blank_row">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><h3><b><u>Sales & Distribution Expenses</u></b></h3></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right"></td>
+                    </tr>
+                    <tbody>
+                        <tr *ngFor="let s of salesDis">
+                            <td scope="row">{{ s.namevalue }}</td>
+                            <td class="border_left_right" id="text_right">{{ s.valu }}</td>
+                            <td id="text_right"></td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <td></td>
+                        <td class="border_lrb" id="text_right"></td>
+                        <td class="border_b" id="text_right">( {{ sumSalesDis }} )</td>
+                    </tr>
+                    <tr class="blank_row">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><h3><b><u>Financial & Other Expenses</u></b></h3></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right"></td>
+                    </tr>
+                    <tbody>
+                        <tr *ngFor="let s of financial">
+                            <td scope="row">{{ s.namevalue }}</td>
+                            <td class="border_left_right" id="text_right">{{ s.valu }}</td>
+                            <td id="text_right"></td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <td></td>
+                        <td class="border_lrb" id="text_right"></td>
+                        <td class="border_b" id="text_right">( {{ sumFinancial }} )</td>
+                    </tr>
+                    <tr class="blank_row">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><h2>Net Profit</h2></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td class="final_value_column" id="text_right">
+                            {{ ((sumSalesData - sumCost) + sumOther) - sumAdministrative - sumSalesDis - sumFinancial }}
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            </td>
+
+            <td>
+                <div class="pl-div">
+                <table id="oci_table">
+                    <caption id="caption">Statement of Financial Position</caption>
+                    <tr>
+                        <td><h3><b><u>Assets</u></b></h3></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right"></td>
+                    </tr>
+
+                    <tr>
+                        <td><h3><b><u>Non-Current Assets</u></b></h3></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right"></td>
+                    </tr>
+                    <tbody>
+                        <tr *ngFor="let s of nca">
+                            <td scope="row">{{ s.namevalue }}</td>
+                            <td class="border_left_right" id="text_right">{{ s.valu }}</td>
+                            <td id="text_right"></td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <td></td>
+                        <td class="border_lrb" id="text_right"></td>
+                        <td class="border_b" id="text_right"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right">{{ sumnca }}</td>
+                    </tr>
+                    <tr class="blank_row">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><h3><b><u>Current Assets</u></b></h3></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right"></td>
+                    </tr>
+                    <tbody>
+                        <tr *ngFor="let s of ca">
+                            <td scope="row">{{ s.namevalue }}</td>
+                            <td class="border_left_right" id="text_right">{{ s.valu }}</td>
+                            <td id="text_right"></td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <td></td>
+                        <td class="border_lrb" id="text_right"></td>
+                        <td class="border_b" id="text_right"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right">{{ sumca }}</td>
+                    </tr>
+                    <tr class="blank_row">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><h2>Total Assets</h2></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td class="final_value_column" id="text_right">{{ sumnca + sumca }}</td>
+                    </tr>
+                    <tr class="blank_row">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td><h3><b><u>Equity and Liabilities</u></b></h3></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right"></td>
+                    </tr>
+                    <tr>
+                        <td><h3><b><u>Equity</u></b></h3></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right"></td>
+                    </tr>
+                    <tbody>
+                        <tr *ngFor="let s of equity">
+                            <td scope="row">{{ s.namevalue }}</td>
+                            <td class="border_left_right" id="text_right">{{ s.valu }}</td>
+                            <td id="text_right"></td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <td><b>Net Profit</b></td>
+                        <td class="border_left_right" id="text_right">
+                            {{ ((sumSalesData - sumCost) + sumOther) - sumAdministrative - sumSalesDis - sumFinancial }}
+                        </td>
+                        <td id="text_right"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="border_lrb" id="text_right"></td>
+                        <td class="border_b" id="text_right"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right">{{ sumequity + (((sumSalesData - sumCost) + sumOther) - sumAdministrative - sumSalesDis - sumFinancial) }}</td>
+                    </tr>
+                    <tr class="blank_row">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    
+
+                    <tr>
+                        <td><h3><b><u>Non-Current Liabilities</u></b></h3></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right"></td>
+                    </tr>
+                    <tbody>
+                        <tr *ngFor="let s of ncl">
+                            <td scope="row">{{ s.namevalue }}</td>
+                            <td class="border_left_right" id="text_right">{{ s.valu }}</td>
+                            <td id="text_right"></td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <td></td>
+                        <td class="border_lrb" id="text_right"></td>
+                        <td class="border_b" id="text_right"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right">{{ sumncl }}</td>
+                    </tr>
+                    <tr class="blank_row">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    
+
+                    <tr>
+                        <td><h3><b><u>Current Liabilities</u></b></h3></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right"></td>
+                    </tr>
+                    <tbody>
+                        <tr *ngFor="let s of cl">
+                            <td scope="row">{{ s.namevalue }}</td>
+                            <td class="border_left_right" id="text_right">{{ s.valu }}</td>
+                            <td id="text_right"></td>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <td></td>
+                        <td class="border_lrb" id="text_right"></td>
+                        <td class="border_b" id="text_right"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td id="text_right">{{ sumcl }}</td>
+                    </tr>
+                    <tr class="blank_row">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    
+
+
+                    <tr>
+                        <td><h2>Total Equity and Liabilities</h2></td>
+                        <td class="border_left_right" id="text_right"></td>
+                        <td class="final_value_column" id="text_right">
+                            {{ sumequity + (((sumSalesData - sumCost) + sumOther) - sumAdministrative - sumSalesDis - sumFinancial) + sumncl + sumcl }}
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            </td>
+        </tr>
+        
+
+    </tbody>
+    
+</table>
+</div>
+
+
+<!-- Footer section -->
+<div class="footer_container">
+    <div class="footer_links">
+      <div class="footer_link_wrapper">
+        <div class="footer_link_items">
+          <h2>About Us</h2>
+          <a href="/">How it works</a>
+          <a href="/">Careers</a>
+          <a href="/">Investments</a>
+          <a href="/">Terms of Service</a>
+        </div>
+  
+        <div class="footer_link_items">
+          <h2>Contact Us</h2>
+          <a href="/">Contact</a>
+          <a href="/">Support</a>
+          <a href="/">Destinations</a>
+          <a href="/">Sponsorships</a>
+        </div>
+      </div>
+  
+      <div class="footer_link_wrapper">
+        <div class="footer_link_items">
+          <h2>Videos</h2>
+          <a href="/">Submit Video</a>
+          <a href="/">Ambassadors</a>
+          <a href="/">Agency</a>
+          <a href="/">Influencer</a>
+        </div>
+  
+        <div class="footer_link_items">
+          <h2>Social Media</h2>
+          <a href="//www.facebook.com" target="_blank">Facebook</a>
+          <a href="//www.instagram.com" target="_blank">instagram</a>
+          <a href="//www.youtube.com" target="_blank">YouTube</a>
+          <a href="//twitter.com" target="_blank">Twitter</a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="social_media">
+      <div class="social_media_wrap">
+        <div class="footer_logo">
+          <a href="/account" id="footer_logo">
+            <i class="fa-solid fa-coins"></i>  Accounting
+          </a>
+        </div>
+  
+        <p class="website_rights">Ⓒ Kavindu Hasintha 2022. All rights reserved</p>
+  
+        <div class="social_icons">
+          <a href="//www.facebook.com" class="social_icon_link" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="//www.instagram.com" class="social_icon_link" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="//www.youtube.com" class="social_icon_link" target="_blank">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="//twitter.com" class="social_icon_link" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  
+  </div>

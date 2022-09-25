@@ -1,0 +1,292 @@
+/* Header */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* font-family: */
+  }
+  
+  .navbar {
+    background: #000000;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .navbar_container {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+  }
+  
+  .fa-solid {
+    margin-right: 0.5rem;
+  }
+  
+  #navbar_logo {
+    color: #fff;
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+  }
+  
+  #navbar_logo:hover {
+    color: rgb(255, 0, 0);
+  }
+  
+  .navbar_menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+  }
+  
+  .buttons {
+    display: flex;
+  }
+  
+  #navbar_menu_btn {
+    color: #fff;
+    display: none;
+  }
+  
+  #navbar_menu_btn:hover {
+    color: red;
+  }
+  
+  .navbar_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100dp;
+  }
+  
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: solid 2px;
+    border-radius: 5px;
+    background: #000000;
+    color: #fff;
+  }
+  
+  .btn:hover {
+    color: red;
+  }
+
+/* Login Div */
+.login_main {
+    background-color: #242424;
+    /*height: 80vh;
+    padding: 1rem;*/
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-self: center;
+  margin: 0 auto;
+  height: 80vh;
+  background-color: #242424;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 50px;
+}
+
+.main_img {
+  text-align: center;
+}
+
+#main_img {
+  height: 75%;
+  width: 75%;
+}
+
+#login_card {
+    margin: 0 auto;
+    padding: auto;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    background: #000000;
+    background-position: center;
+}
+
+#login_header {
+    font-size: 1.8rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding-top: 25px;
+}
+
+.login_container {
+    text-align: center;
+    color: #fff;
+}
+
+#loginLink a {
+  color: #fff;
+}
+
+#loginLink a:hover {
+  color: red;
+}
+
+#login_btn {
+    justify-content: center;  
+  align-items: center;
+  text-decoration: none;
+  height: 45px;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 5px;
+  background:  #000000;
+  color: #fff;
+  transition: all 0.3s ease;
+  font-size: 20px;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+#login_btn:hover {
+    color: red;
+    border-color: red;
+}
+
+.form-control {
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.form-control:focus {
+    border: 2px solid red;
+}
+
+/* Footer CSS */
+.footer_container {
+    background-color: #000000;
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer_links {
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer_link_wrapper {
+    display: flex;
+  }
+  
+  .footer_link_items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 16px;
+    text-align: left;
+    width: 160px;
+    box-sizing: border-box;
+  }
+  
+  .footer_link_items h2 {
+    margin-bottom: 16px;
+    color: #fff;
+  }
+  
+  .footer_link_items a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer_link_items a:hover {
+    color: red;
+    padding-left: 0.5rem;
+    transition: 0.3s ease-out;
+  }
+  
+  .social_media {
+    max-width: 1000px;
+    width: 100%;
+    border-top: 1px solid #fff;
+  }
+  
+  .social_media_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+  }
+  
+  #footer_logo {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+  }
+  
+  #footer_logo:hover {
+    color: red;
+  }
+  
+  .website_rights {
+    color: #fff;
+    padding-top: 1rem;
+  }
+  
+  .social_icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+  }
+  
+  .social_icon_link {
+    color: #fff;
+    font-size: 24px;
+  
+  }
+  
+  .social_icon_link:hover {
+    color: red;
+    padding-bottom: 0.5rem;
+    transition: 0.3s ease-out;
+  }
